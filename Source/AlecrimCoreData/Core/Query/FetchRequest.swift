@@ -60,18 +60,18 @@ extension FetchRequest {
     
     public func dropFirst(_ n: Int) -> FetchRequest<Entity> {
         var clone = self
-        clone.offset = offset
+        clone.offset = n
         
         return clone
     }
     
     public func prefix(_ maxLength: Int) -> FetchRequest<Entity> {
         var clone = self
-        clone.limit = limit
+        clone.limit = maxLength
         
         return clone
     }
-
+    
     public func batchSize(_ batchSize: Int) -> FetchRequest<Entity> {
         var clone = self
         clone.batchSize = batchSize
